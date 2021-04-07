@@ -1,6 +1,8 @@
 // import ObjetosLiterales from "./typescript/ObjetosLiterales"
 // import TiposBasicos from "./typescript/TiposBasicos"
-import Funciones from './typescript/Funciones';
+// import Funciones from './typescript/Funciones';
+import ContadorConHooks from "./components/ContadorConHooks"
+// import Contador from "./components/Contador"
 
 const App = () => {
 
@@ -10,7 +12,9 @@ const App = () => {
       <hr />
       {/* <TiposBasicos /> */}
       {/* <ObjetosLiterales /> */}
-      <Funciones />
+      {/* <Funciones /> */}
+      {/* <Contador /> */}
+      <ContadorConHooks />
     </div>
   )
 }
