@@ -21,15 +21,28 @@ const useUsuarios = () => {
 
     if( res.data.data.length > 0 ) {
       setUsuarios( res.data.data )
-      paginaRef.current++;
     } else {
+      paginaRef.current--;
       alert('No hay mas registros')
+    }
+  }
+
+  const paginaSiguiente = () => {
+    paginaRef.current++;
+    cargarUsuarios()
+  }
+
+  const paginaAnterior = () => {
+    if( paginaRef.current > 1) {
+      paginaRef.current--;
+      cargarUsuarios()
     }
   }
 
   return {
     usuarios,
-    cargarUsuarios
+    paginaSiguiente,
+    paginaAnterior
   }
   
 }
