@@ -18,3 +18,11 @@ React Native: Aplicaciones nativas para IOS y Android
 * TouchableOpacity
 * TouchableNativeFeedback
 * TouchableWithoutFeedback
+* Componentes basicos https://reactnative.dev/docs/components-and-apis
+# Tips
+Los botones son poco usados hay que usar TouchableOpacity, TouchableHighlight y/o TouchableWithoutFeedback
+
+View: Contiene 0 px de ancho y alto
+
+Todos los Textos deben de estar dentro del componente Text
+
