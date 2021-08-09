@@ -26,3 +26,11 @@ View: Contiene 0 px de ancho y alto
 
 Todos los Textos deben de estar dentro del componente Text
 
+## Seccion 2
+En esta sección nos enfocaremos principalmente en comprender los 3 bloques principales para el diseño de aplicaciones en React Native:
+
+* Box Object Model
+* Position
+* Flex Layout
+
+Entraremos en detalles en cada uno de estos tres bloques de diseño para poder sentir que tenemos la libertad necesaria para crear los diseños funcionales que queramo
