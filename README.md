@@ -33,7 +33,7 @@ En esta sección nos enfocaremos principalmente en comprender los 3 bloques prin
 * Position
 * Flex Layout
 
-## Calculadora
+## 03-Calculadora
 Entraremos en detalles en cada uno de estos tres bloques de diseño para poder sentir que tenemos la libertad necesaria para crear los diseños funcionales que queramo
 
 Esta sección es nuestra primera aplicación oficial en React Native, crearemos una calculadora que use componentes re-utilizables, custom hooks, cálculos matemáticos y estilo Flex para lograr el aspecto visual deseado.
@@ -50,3 +50,6 @@ Puntualmente veremos:
 * Tema global
 * Estilos condicionales
 * Y más
+
+## 04-Calculadora
+Aquí empezaremos con el Stack y Drawer navigation, comprender cada uno de los diferentes controles de navegaciones es una pieza fundamental el cualquier aplicación móvil, por lo que procuremos aprender cada uno de ellos para poderlos mezclar y lograr el objetivo que tenemos para nuestra aplicación.

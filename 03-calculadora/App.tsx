@@ -1,10 +1,12 @@
 import React from 'react';
 import {CalculadoraScreen} from './src/screens/CalculadoraScreen';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, StatusBar} from 'react-native';
+import {styles} from './src/theme/appTheme';
 
 const App = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.fondo}>
+      <StatusBar backgroundColor="black" barStyle="light-content" />
       <CalculadoraScreen />
     </SafeAreaView>
   );
