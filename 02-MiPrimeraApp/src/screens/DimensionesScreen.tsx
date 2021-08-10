@@ -3,7 +3,7 @@ import {
   View,
   Text,
   StyleSheet,
-  Dimensions,
+  // Dimensions,
   useWindowDimensions,
 } from 'react-native';
 

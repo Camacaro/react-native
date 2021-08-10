@@ -4,18 +4,18 @@ import {View, StyleSheet} from 'react-native';
 export const PositionScreen = () => {
   return (
     <View style={styles.container}>
+      <View style={styles.cajaVerde} />
       <View style={styles.cajaMorada} />
       <View style={styles.cajaNaranja} />
-      <View style={styles.cajaVerde} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    width: 300,
-    height: 300,
+    flex: 1, // Toma toda la pantalla
+    // width: 300,
+    // height: 300,
     // justifyContent: 'center',
     // alignItems: 'center',
     backgroundColor: '#28C4D9',
@@ -42,11 +42,13 @@ const styles = StyleSheet.create({
     // top: 10,
   },
   cajaVerde: {
-    width: 100,
-    height: 100,
+    // width: 100,
+    // height: 100,
     backgroundColor: 'green',
-    borderWidth: 10,
+    borderWidth: 5, //10,
     borderColor: 'white',
-    position: 'absolute',
+    // position: 'absolute',
+    // Esto es como poner bottom, left, top y right en 0
+    ...StyleSheet.absoluteFillObject,
   },
 });
