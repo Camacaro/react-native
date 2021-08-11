@@ -62,6 +62,17 @@ Leer documentacion para instalacion https://reactnavigation.org/
 * Drawer Navigation
   menu lateral
   ```npm install @react-navigation/drawer react-native-gesture-handler react-native-reanimated```
+  #### Problemas con el react-native-reanimated
+  seguir los pasos de la doc https://docs.swmansion.com/react-native-reanimated/docs/installation/ y reset cache
+  * npm cache clean --force
+  * cd android
+  * gradlew clean
+  * gradle cleanBuildCache
+  * gradlew build --refresh-dependencies
+  * cd ..
+  * npx react-native start --reset-cache
+  * npx react-native run-android
+
 
 BottomTab Navigation
 MaterialTop Navigations
