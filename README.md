@@ -73,6 +73,6 @@ Leer documentacion para instalacion https://reactnavigation.org/
   * npx react-native start --reset-cache
   * npx react-native run-android
 
+* BottomTab Navigation (04.1-navegacionAppTabs)
 
-BottomTab Navigation
 MaterialTop Navigations
