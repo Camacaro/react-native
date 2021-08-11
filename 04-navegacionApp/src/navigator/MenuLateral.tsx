@@ -11,6 +11,7 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
+// import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {StackNavigator} from './StackNavigator';
 import {SettingsScreen} from '../screens/SettingsScreen';
 import {styles} from '../theme/appTheme';
@@ -20,6 +21,15 @@ import {styles} from '../theme/appTheme';
  * para los params
  */
 const Drawer = createDrawerNavigator();
+
+// const Stack = createNativeStackNavigator();
+// const SettingsStackScreen = () => {
+//   return (
+//     <Stack.Navigator>
+//       <Stack.Screen name="SettingsStackScreen" component={SettingsScreen} />
+//     </Stack.Navigator>
+//   );
+// };
 
 export const MenuLateral = () => {
   const {width} = useWindowDimensions();
@@ -36,7 +46,13 @@ export const MenuLateral = () => {
         drawerType: width >= 768 ? 'permanent' : 'front',
       }}>
       <Drawer.Screen name="StackNavigator" component={StackNavigator} />
-      <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
+      <Drawer.Screen
+        name="SettingsScreen"
+        component={SettingsScreen}
+        // Puedo montar otro stack de screens independiente
+        // name="SettingsScreen"
+        // component={SettingsStackScreen}
+      />
     </Drawer.Navigator>
   );
 };

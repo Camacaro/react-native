@@ -6,6 +6,9 @@ import {DrawerScreenProps} from '@react-navigation/drawer';
 import {styles} from '../theme/appTheme';
 
 // interface Props extends NativeStackScreenProps<any, any> {}
+
+// Aqui cambiamos al DrawerScreenProps para poder acceder al toggleDrawer
+// para poder abrir el menu lateral
 interface Props extends DrawerScreenProps<any, any> {}
 
 export const Pagina1Screen = ({navigation}: Props) => {
@@ -19,13 +22,19 @@ export const Pagina1Screen = ({navigation}: Props) => {
 
   return (
     <View style={styles.globalMargin}>
-      <Text style={styles.title}> Pagina1Screen </Text>
+      <Text style={styles.title}>Pagina1Screen</Text>
       <Button
         title="Ir a página 2"
         onPress={() => navigation.navigate('Pagina2Screen')}
       />
 
-      <Text>Navegar con argumentos</Text>
+      <Text
+        style={{
+          marginVertical: 20,
+          fontSize: 20,
+        }}>
+        Navegar con argumentos
+      </Text>
 
       <View style={{flexDirection: 'row'}}>
         <TouchableOpacity
