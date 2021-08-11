@@ -55,9 +55,13 @@ Puntualmente veremos:
 Aquí empezaremos con el Stack y Drawer navigation, comprender cada uno de los diferentes controles de navegaciones es una pieza fundamental el cualquier aplicación móvil, por lo que procuremos aprender cada uno de ellos para poderlos mezclar y lograr el objetivo que tenemos para nuestra aplicación.
 
 ### Navigation
+Leer documentacion para instalacion https://reactnavigation.org/
 * Stack Navigation
   Las pantallas se mantienen activas y las nuevas se montan encimas
   ```npm install @react-navigation/native```
-Drawer Navigation
+* Drawer Navigation
+  menu lateral
+  ```npm install @react-navigation/drawer react-native-gesture-handler react-native-reanimated```
+
 BottomTab Navigation
 MaterialTop Navigations
