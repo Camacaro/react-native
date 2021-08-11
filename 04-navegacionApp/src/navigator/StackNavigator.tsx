@@ -3,8 +3,19 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Pagina1Screen} from '../screens/Pagina1Screen';
 import {Pagina2Screen} from '../screens/Pagina2Screen';
 import {Pagina3Screen} from '../screens/Pagina3Screen';
+import {PersonaScreen} from '../screens/PersonaScreen';
 
-const Stack = createNativeStackNavigator();
+export type RootStackParams = {
+  Pagina1Screen: undefined;
+  Pagina2Screen: undefined;
+  Pagina3Screen: undefined;
+  PersonaScreen: {
+    id: number;
+    nombre: string;
+  };
+};
+
+const Stack = createNativeStackNavigator<RootStackParams>();
 /**
  * initialRouteName, sirve para decir en cual componente vas a empezar
  * y no agarre el de la primera lista
@@ -34,6 +45,7 @@ export const StackNavigator = () => {
         options={{title: 'Página 3'}}
         component={Pagina3Screen}
       />
+      <Stack.Screen name="PersonaScreen" component={PersonaScreen} />
     </Stack.Navigator>
   );
 };
