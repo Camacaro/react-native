@@ -3,6 +3,7 @@ import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {View, Text} from 'react-native';
 import {styles} from '../theme/appTheme';
 import {RootStackParams} from '../navigator/StackNavigator';
+import {useAuthContext} from '../context/AuthContext';
 
 // Opcion 2
 // interface RouterParams {
@@ -15,6 +16,7 @@ interface Props
   extends NativeStackScreenProps<RootStackParams, 'PersonaScreen'> {}
 
 export const PersonaScreen = ({route, navigation}: Props) => {
+  const {changeUsername} = useAuthContext();
   // const params = route.params; // Opcion 1
   // const params = route.params as RouterParams; // Opcion 2
   const params = route.params; // Opcion 3
@@ -24,6 +26,10 @@ export const PersonaScreen = ({route, navigation}: Props) => {
       // title: params!.nombre, // Opcion 1
       title: params.nombre, // Opcion 2 - Opcion 3
     });
+  }, []);
+
+  useEffect(() => {
+    changeUsername(params.nombre);
   }, []);
 
   return (

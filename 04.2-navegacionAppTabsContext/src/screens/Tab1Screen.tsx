@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
 import {View, Text} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-
-import {styles, colors} from '../theme/appTheme';
+import {styles} from '../theme/appTheme';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {TouchableIcon} from '../components/TouchableIcon';
 
 export const Tab1Screen = () => {
   const {top} = useSafeAreaInsets();
@@ -25,17 +24,17 @@ export const Tab1Screen = () => {
       <Text style={styles.title}> Iconos </Text>
 
       <Text>
-        <Icon name="airplane-outline" size={50} color={colors.primary} />
-        <Icon name="aperture-outline" size={50} color={colors.primary} />
-        <Icon name="arrow-redo-outline" size={50} color={colors.primary} />
-        <Icon name="balloon-outline" size={50} color={colors.primary} />
-        <Icon name="baseball-outline" size={50} color={colors.primary} />
-        <Icon name="bandage-outline" size={50} color={colors.primary} />
-        <Icon name="cloud-outline" size={50} color={colors.primary} />
-        <Icon name="bookmarks-outline" size={50} color={colors.primary} />
-        <Icon name="calculator-outline" size={50} color={colors.primary} />
-        <Icon name="contrast-outline" size={50} color={colors.primary} />
-        <Icon name="cash-outline" size={50} color={colors.primary} />
+        <TouchableIcon iconName="airplane-outline" />
+        <TouchableIcon iconName="aperture-outline" />
+        <TouchableIcon iconName="arrow-redo-outline" />
+        <TouchableIcon iconName="beer-outline" />
+        <TouchableIcon iconName="baseball-outline" />
+        <TouchableIcon iconName="bandage-outline" />
+        <TouchableIcon iconName="cloud-outline" />
+        <TouchableIcon iconName="bookmarks-outline" />
+        <TouchableIcon iconName="calculator-outline" />
+        <TouchableIcon iconName="contrast-outline" />
+        <TouchableIcon iconName="cash-outline" />
       </Text>
     </View>
   );
