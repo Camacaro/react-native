@@ -8,6 +8,7 @@ import {Tab2Screen} from '../screens/Tab2Screen';
 import {StackNavigator} from './StackNavigator';
 import {colors} from '../theme/appTheme';
 import {Platform, Text} from 'react-native';
+import { TopTabNavigator } from './TopTabNavigator';
 
 /**
  *
@@ -71,11 +72,13 @@ const TabsAndroid = () => {
       <BottomTabAndroid.Screen
         name="Tab2Screen"
         options={{title: 'Tab2'}}
-        component={Tab2Screen}
+        // component={Tab2Screen}
+        component={TopTabNavigator}
       />
       <BottomTabAndroid.Screen
         name="StackNavigator"
         options={{title: 'Stack'}}
+        // component={Tab3Screen}
         component={StackNavigator}
       />
     </BottomTabAndroid.Navigator>
@@ -151,7 +154,8 @@ const TabsIOS = () => {
       <BottomTabIOS.Screen
         name="Tab2Screen"
         options={{title: 'Tab2'}}
-        component={Tab2Screen}
+        // component={Tab2Screen}
+        component={TopTabNavigator}
       />
       <BottomTabIOS.Screen
         name="StackNavigator"

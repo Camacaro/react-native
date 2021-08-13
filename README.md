@@ -74,6 +74,7 @@ Leer documentacion para instalacion https://reactnavigation.org/
   * npx react-native run-android
 
 * BottomTab Navigation (04.1-navegacionAppTabs)
+  seguir documentacion https://reactnavigation.org/docs/bottom-tab-navigator/
   La animacion entre tabs en diferente entre ios y android
   en ios es mas natural pero para android no, hay que usar unas
   libreria para darle esa naturalidad
@@ -81,4 +82,6 @@ Leer documentacion para instalacion https://reactnavigation.org/
   si me da error ejecutar 
   ```npm install @react-navigation/material-bottom-tabs react-native-paper --legacy-peer-deps```
 
-MaterialTop Navigations
+* MaterialTop Navigations
+  Instalar dependencias, seguir documentacion https://reactnavigation.org/docs/material-top-tab-navigator/
+  ```npm install @react-navigation/material-top-tabs react-native-tab-view react-native-pager-view```
