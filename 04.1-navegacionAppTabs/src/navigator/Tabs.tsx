@@ -2,13 +2,14 @@
 import React from 'react';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {Tab1Screen} from '../screens/Tab1Screen';
 import {Tab2Screen} from '../screens/Tab2Screen';
 // import {Tab3Screen} from '../screens/Tab3Screen';
 import {StackNavigator} from './StackNavigator';
 import {colors} from '../theme/appTheme';
 import {Platform, Text} from 'react-native';
-import { TopTabNavigator } from './TopTabNavigator';
+import {TopTabNavigator} from './TopTabNavigator';
 
 /**
  *
@@ -48,18 +49,21 @@ const TabsAndroid = () => {
           let iconName: string = '';
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = 'T1';
+              iconName = 'add-circle-outline';
               break;
 
             case 'Tab2Screen':
-              iconName = 'T2';
+              // iconName = 'T2';
+              iconName = 'bookmark-outline';
               break;
 
             case 'StackNavigator':
-              iconName = 'ST';
+              // iconName = 'ST';
+              iconName = 'people-outline';
               break;
           }
-          return <Text style={{color}}>{iconName}</Text>;
+          // <Text style={{color}}>{iconName}</Text>;
+          return <Icon name={iconName} size={20} color={color} />;
         },
       })}>
       <BottomTabAndroid.Screen
@@ -121,18 +125,21 @@ const TabsIOS = () => {
           let iconName: string = '';
           switch (route.name) {
             case 'Tab1Screen':
-              iconName = 'T1';
+              iconName = 'add-circle-outline';
               break;
 
             case 'Tab2Screen':
-              iconName = 'T2';
+              // iconName = 'T2';
+              iconName = 'bookmark-outline';
               break;
 
             case 'StackNavigator':
-              iconName = 'ST';
+              // iconName = 'ST';
+              iconName = 'people-outline';
               break;
           }
-          return <Text style={{color}}>{iconName}</Text>;
+          // return <Text style={{color}}>{iconName}</Text>;
+          return <Icon name={iconName} size={20} color={color} />;
         },
       })}>
       {/* Agregar icon desde el screen */}

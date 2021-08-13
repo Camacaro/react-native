@@ -1,4 +1,6 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {
   createDrawerNavigator,
   DrawerContentComponentProps,
@@ -74,14 +76,22 @@ const MenuInterno = ({navigation}: DrawerContentComponentProps) => {
       {/* opciones de menú */}
       <View style={styles.menuContainer}>
         <TouchableOpacity
-          style={styles.menuBoton}
+          style={{
+            ...styles.menuBoton,
+            flexDirection: 'row',
+          }}
           onPress={() => navigation.navigate('Tabs')}>
-          <Text style={styles.menuTexto}>Navegacion</Text>
+          <Icon name="compass-outline" size={20} color="black" />
+          <Text style={styles.menuTexto}> Navegacion</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.menuBoton}
+          style={{
+            ...styles.menuBoton,
+            flexDirection: 'row',
+          }}
           onPress={() => navigation.navigate('SettingsScreen')}>
+          <Icon name="cog-outline" size={20} color="black" />
           <Text style={styles.menuTexto}>Ajuste</Text>
         </TouchableOpacity>
       </View>

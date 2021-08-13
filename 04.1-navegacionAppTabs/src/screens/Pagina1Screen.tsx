@@ -1,9 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useEffect} from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
 import {View, Text, Button, TouchableOpacity} from 'react-native';
 // import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {DrawerScreenProps} from '@react-navigation/drawer';
-import {styles} from '../theme/appTheme';
+import {colors, styles} from '../theme/appTheme';
 
 // interface Props extends NativeStackScreenProps<any, any> {}
 
@@ -15,7 +16,9 @@ export const Pagina1Screen = ({navigation}: Props) => {
   useEffect(() => {
     navigation.setOptions({
       headerLeft: () => (
-        <Button title="Menú" onPress={() => navigation.toggleDrawer()} />
+        <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+          <Icon name="menu-outline" size={35} color={colors.primary} />
+        </TouchableOpacity>
       ),
     });
   }, []);
@@ -45,6 +48,7 @@ export const Pagina1Screen = ({navigation}: Props) => {
               nombre: 'Jesus',
             })
           }>
+          <Icon name="body-outline" size={35} color={'white'} />
           <Text style={styles.botonGrandeTexto}> Jesus </Text>
         </TouchableOpacity>
 
@@ -56,6 +60,7 @@ export const Pagina1Screen = ({navigation}: Props) => {
               nombre: 'Oriana',
             })
           }>
+          <Icon name="woman-outline" size={35} color={'white'} />
           <Text style={styles.botonGrandeTexto}> Oriana </Text>
         </TouchableOpacity>
       </View>

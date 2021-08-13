@@ -85,3 +85,7 @@ Leer documentacion para instalacion https://reactnavigation.org/
 * MaterialTop Navigations
   Instalar dependencias, seguir documentacion https://reactnavigation.org/docs/material-top-tab-navigator/
   ```npm install @react-navigation/material-top-tabs react-native-tab-view react-native-pager-view```
+
+* Icons 
+  https://github.com/oblador/react-native-vector-icons
+  https://ionic.io/ionicons
