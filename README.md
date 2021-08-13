@@ -66,9 +66,9 @@ Leer documentacion para instalacion https://reactnavigation.org/
   seguir los pasos de la doc https://docs.swmansion.com/react-native-reanimated/docs/installation/ y reset cache
   * npm cache clean --force
   * cd android
-  * gradlew clean
-  * gradle cleanBuildCache
-  * gradlew build --refresh-dependencies
+  * gradlew clean || .\gradlew clean
+  * gradle cleanBuildCache || .\gradlew cleanBuildCache
+  * gradlew build --refresh-dependencies || .\gradlew build --refresh-dependencies
   * cd ..
   * npx react-native start --reset-cache
   * npx react-native run-android
