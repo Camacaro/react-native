@@ -92,3 +92,11 @@ Leer documentacion para instalacion https://reactnavigation.org/
 
 ### Context API
 comunicar los componentes entre sí, sin importar su ubicación en el árbol de componentes.
+
+### peliculasApp
+* Axios
+* Custom Hooks aplicados a la realidad
+* Loadings
+* Promesas simultáneas @
+* Carousels
+* Y más
