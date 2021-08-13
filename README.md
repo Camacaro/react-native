@@ -89,3 +89,6 @@ Leer documentacion para instalacion https://reactnavigation.org/
 * Icons 
   https://github.com/oblador/react-native-vector-icons
   https://ionic.io/ionicons
+
+### Context API
+comunicar los componentes entre sí, sin importar su ubicación en el árbol de componentes.

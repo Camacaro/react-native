@@ -6,7 +6,7 @@ import {AlbumsScreen} from '../screens/AlbumsScreen';
 import {ContactsScreen} from '../screens/ContactsScreen';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {colors} from '../theme/appTheme';
-import { Text } from 'react-native';
+// import {Text} from 'react-native';
 
 const Tab = createMaterialTopTabNavigator();
 
