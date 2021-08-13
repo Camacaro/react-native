@@ -2,8 +2,10 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {styles} from '../theme/appTheme';
+import {useAuthContext} from '../context/AuthContext';
 
 export const SettingsScreen = () => {
+  const {authState} = useAuthContext();
   /**
    * Esto se usa para poder crear una separacion con el
    * bar o touch bar del telefono (el espacio negro entre la pantalla)
@@ -16,6 +18,8 @@ export const SettingsScreen = () => {
   return (
     <View style={{...styles.globalMargin, marginTop: insets.top + 20}}>
       <Text style={styles.title}> Settings Screen </Text>
+
+      <Text>{JSON.stringify(authState, null, 4)}</Text>
     </View>
   );
 };
