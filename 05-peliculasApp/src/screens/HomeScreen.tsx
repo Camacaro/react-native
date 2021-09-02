@@ -14,7 +14,7 @@ const {width: widthWindows} = Dimensions.get('window');
 
 // https://api.themoviedb.org/3/movie/now_playing?api_key=e50e9b6b173e52df1ae08cc0e18bc903&language=es-ES
 export const HomeScreen = () => {
-  const {peliculasEnCine, isLoading} = useMovies();
+  const {nowPlaying, popular, topRated, upComing, isLoading} = useMovies();
   const {top} = useSafeAreaInsets();
 
   if (isLoading) {
@@ -31,7 +31,7 @@ export const HomeScreen = () => {
         {/* Carousel principales */}
         <View style={{height: 440}}>
           <Carousel
-            data={peliculasEnCine}
+            data={nowPlaying}
             renderItem={({item}: any) => <MoviePoster movie={item} />}
             sliderWidth={widthWindows}
             itemWidth={300}
@@ -40,7 +40,9 @@ export const HomeScreen = () => {
         </View>
 
         {/* Pelicula populares */}
-        <HorizontalSlider title="En el Cine" movies={peliculasEnCine} />
+        <HorizontalSlider title="Populares" movies={popular} />
+        <HorizontalSlider title="Top Rated" movies={topRated} />
+        <HorizontalSlider title="upComing" movies={upComing} />
       </View>
     </ScrollView>
   );
