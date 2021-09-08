@@ -58,7 +58,7 @@ export const MovieDetails = ({movieFull, cast}: Props) => {
           style={{marginTop: 10, height: 70}}
           keyExtractor={item => item.id}
           showsHorizontalScrollIndicator={false}
-          renderItem={({item}) => <CastItem actor={item}/>}
+          renderItem={({item}) => <CastItem actor={item} />}
         />
       </View>
     </>
