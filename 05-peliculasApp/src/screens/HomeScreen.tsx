@@ -1,9 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {View, ActivityIndicator, Dimensions} from 'react-native';
 
-import ImageColors from 'react-native-image-colors';
 import Carousel from 'react-native-snap-carousel';
 
 import {MoviePoster} from '../components/MoviePoster';
@@ -13,11 +13,13 @@ import {HorizontalSlider} from '../components/HorizontalSlider';
 import {GradientBackground} from '../components/GradientBackground';
 import {Movie} from '../interfaces/movie.interface';
 import {getImagesColors} from '../helpers/getColores';
+import {useGradientContext} from '../context/GradientContext';
 
 const {width: widthWindows} = Dimensions.get('window');
 
 // https://api.themoviedb.org/3/movie/now_playing?api_key=e50e9b6b173e52df1ae08cc0e18bc903&language=es-ES
 export const HomeScreen = () => {
+  const {setMainColors} = useGradientContext();
   const {nowPlaying, popular, topRated, upComing, isLoading} = useMovies();
   const {top} = useSafeAreaInsets();
 
@@ -25,10 +27,18 @@ export const HomeScreen = () => {
     const movie: Movie = nowPlaying[index];
     const uri = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
-    const [primary, secondary] = await getImagesColors(uri);
+    const [primary = 'green', secondary = 'orange'] = await getImagesColors(
+      uri,
+    );
 
-    console.log(primary, secondary);
+    setMainColors({primary, secondary});
   };
+
+  useEffect(() => {
+    if (nowPlaying.length > 0) {
+      getPosterColors(0);
+    }
+  }, [nowPlaying]);
 
   if (isLoading) {
     return (
