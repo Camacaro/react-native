@@ -99,4 +99,21 @@ comunicar los componentes entre sí, sin importar su ubicación en el árbol de 
 * Loadings
 * Promesas simultáneas @
 * Carousels
+* Gradiente
 * Y más
+
+### Componentes de RactNative
+En esta sección vamos a trabajar con muchos componentes de React Native y su personalización, el objetivo es que aprendamos sus detalles y cómo seguir expandiendo nuestro conocimiento de la mano de la documentación.
+Aquí veremos entre otros temas:
+* Animaciones
+* FlatLists
+* Normales
+* Agrupadas
+* Modals
+* Alertas
+* Switches
+* TextInputs
+* Teclados
+* Imágenes
+* FadeInImage
+y más
