@@ -64,6 +64,9 @@ Leer documentacion para instalacion https://reactnavigation.org/
   ```npm install @react-navigation/drawer react-native-gesture-handler react-native-reanimated```
   #### Problemas con el react-native-reanimated
   seguir los pasos de la doc https://docs.swmansion.com/react-native-reanimated/docs/installation/ y reset cache
+
+  (Failed to transform react-native-reanimated-65-jsc.aar -> Installing react-native-reanimated@2.3.0-alpha.2 also fix it)
+
   * npm cache clean --force
   * cd android
   * gradlew clean || .\gradlew clean
@@ -102,7 +105,7 @@ comunicar los componentes entre sí, sin importar su ubicación en el árbol de 
 * Gradiente
 * Y más
 
-### Componentes de RactNative
+### 06 Componentes de RactNative
 En esta sección vamos a trabajar con muchos componentes de React Native y su personalización, el objetivo es que aprendamos sus detalles y cómo seguir expandiendo nuestro conocimiento de la mano de la documentación.
 Aquí veremos entre otros temas:
 * Animaciones
