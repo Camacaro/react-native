@@ -5,6 +5,7 @@ import {styles} from '../theme/appTheme';
 import {FlatListManuItem} from '../components/FlatListManuItem';
 import {menuItems} from '../data/menuItems';
 import {HeaderTitle} from '../components/HeaderTitle';
+import {ItemSeparator} from '../components/ItemSeparator';
 
 export const HomeScreen = () => {
   const renderListHeader = () => {
@@ -12,9 +13,7 @@ export const HomeScreen = () => {
   };
 
   const itemSeparator = () => {
-    return (
-      <View style={{borderBottomWidth: 1, opacity: 0.4, marginVertical: 8}} />
-    );
+    return <ItemSeparator />;
   };
 
   return (
