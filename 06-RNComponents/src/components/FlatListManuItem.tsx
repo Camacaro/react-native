@@ -1,0 +1,42 @@
+import React from 'react';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {MenuItem} from '../interfaces/appInterfaces';
+import {useNavigation} from '@react-navigation/core';
+interface Props {
+  menuItem: MenuItem;
+}
+
+export const FlatListManuItem = ({menuItem}: Props) => {
+  const navigation = useNavigation();
+
+  return (
+    <TouchableOpacity
+      // activeOpacity={0.8}
+      onPress={() => navigation.navigate(menuItem.component as any)}>
+      <View style={styles.container}>
+        <Icon name={menuItem.icon} color="gray" size={23} />
+        <Text style={styles.itemText}> {menuItem.name}</Text>
+        {/* Este view space lo que hace es tomar todo el espacio posible
+        del row respetando los espacios de sus hermanos para mantenerlo
+        como lo el icono al final, si le coloco un backgroundColor: 'red'
+        vere el espacio qeu toma  */}
+        <View style={styles.viewSpace} />
+        <Icon name="chevron-forward-outline" color="gray" size={23} />
+      </View>
+    </TouchableOpacity>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+  },
+  viewSpace: {
+    flex: 1,
+  },
+  itemText: {
+    marginLeft: 10,
+    fontSize: 19,
+  },
+});
