@@ -1,33 +1,14 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, FlatList} from 'react-native';
+import {View, FlatList} from 'react-native';
 import {styles} from '../theme/appTheme';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {MenuItem} from '../interfaces/appInterfaces';
 import {FlatListManuItem} from '../components/FlatListManuItem';
-
-const menuItems: MenuItem[] = [
-  {
-    name: 'Animation 101',
-    icon: 'cube-outline',
-    component: 'Animation101Screen',
-  },
-  {
-    name: 'Animation 102',
-    icon: 'albums-outline',
-    component: 'Animation102Screen',
-  },
-];
+import {menuItems} from '../data/menuItems';
+import {HeaderTitle} from '../components/HeaderTitle';
 
 export const HomeScreen = () => {
-  const {top} = useSafeAreaInsets();
-
   const renderListHeader = () => {
-    return (
-      <View style={{marginTop: top + 20, marginBottom: 20}}>
-        <Text style={styles.title}>Opciones de Menú</Text>
-      </View>
-    );
+    return <HeaderTitle title="Opciones de Menú" />;
   };
 
   const itemSeparator = () => {

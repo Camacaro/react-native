@@ -15,14 +15,14 @@ export const FlatListManuItem = ({menuItem}: Props) => {
       // activeOpacity={0.8}
       onPress={() => navigation.navigate(menuItem.component as any)}>
       <View style={styles.container}>
-        <Icon name={menuItem.icon} color="gray" size={23} />
+        <Icon name={menuItem.icon} color="#5856D6" size={23} />
         <Text style={styles.itemText}> {menuItem.name}</Text>
         {/* Este view space lo que hace es tomar todo el espacio posible
         del row respetando los espacios de sus hermanos para mantenerlo
         como lo el icono al final, si le coloco un backgroundColor: 'red'
         vere el espacio qeu toma  */}
         <View style={styles.viewSpace} />
-        <Icon name="chevron-forward-outline" color="gray" size={23} />
+        <Icon name="chevron-forward-outline" color="#5856D6" size={23} />
       </View>
     </TouchableOpacity>
   );
