@@ -10,8 +10,12 @@ import {
 import {FlatList} from 'react-native-gesture-handler';
 import {FadeInImage} from '../components/FadeInImage';
 import {HeaderTitle} from '../components/HeaderTitle';
+import {useThemeContext} from '../context/theme/ThemeContext';
 
 export const InfiniteScrollScreen = () => {
+  const {
+    theme: {colors},
+  } = useThemeContext();
   const [numbers, setNumbers] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
   const renderItem = (item: number) => {
@@ -76,7 +80,7 @@ export const InfiniteScrollScreen = () => {
               justifyContent: 'center',
               alignItems: 'center',
             }}>
-            <ActivityIndicator size={30} color="#5856D6" />
+            <ActivityIndicator size={30} color={colors.primary} />
           </View>
         )}
       />

@@ -16,6 +16,7 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import {useAnimation} from '../hooks/useAnimation';
+import {useThemeContext} from '../context/theme/ThemeContext';
 
 const {width: screenWidth} = Dimensions.get('window');
 
@@ -47,6 +48,9 @@ const items: Slide[] = [
 
 const LAST_SLIDE_INDEX = items.length - 1;
 export const SlideScreen = ({navigation}: Props) => {
+  const {
+    theme: {colors},
+  } = useThemeContext();
   const {opacity, fadeIn} = useAnimation();
   const [activeIndex, setActiveIndex] = useState(0);
   const [lastSlide, setLastSlide] = useState(false);
@@ -70,7 +74,7 @@ export const SlideScreen = ({navigation}: Props) => {
       <View
         style={{
           flex: 1,
-          backgroundColor: 'white',
+          backgroundColor: colors.background,
           borderRadius: 5,
           padding: 40,
           justifyContent: 'center',
@@ -84,7 +88,10 @@ export const SlideScreen = ({navigation}: Props) => {
           }}
         />
 
-        <Text style={styles.title}> {item.title} </Text>
+        <Text style={{...styles.title, color: colors.text}}>
+          {' '}
+          {item.title}{' '}
+        </Text>
         <Text style={styles.subtitle}> {item.desc} </Text>
       </View>
     );
@@ -120,7 +127,7 @@ export const SlideScreen = ({navigation}: Props) => {
             width: 10,
             height: 10,
             borderRadius: 10,
-            backgroundColor: '#5856D6',
+            backgroundColor: colors.primary,
           }}
         />
 
@@ -129,7 +136,7 @@ export const SlideScreen = ({navigation}: Props) => {
             <TouchableOpacity
               style={{
                 flexDirection: 'row',
-                backgroundColor: '#5856D6',
+                backgroundColor: colors.primary,
                 width: 140,
                 height: 50,
                 borderRadius: 10,

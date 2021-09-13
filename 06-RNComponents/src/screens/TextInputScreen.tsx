@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import {CustomSwitch} from '../components/CustomSwitch';
 import {HeaderTitle} from '../components/HeaderTitle';
+import {useThemeContext} from '../context/theme/ThemeContext';
 import {useForm} from '../hooks/useForm';
 import {styles} from '../theme/appTheme';
 
@@ -31,6 +32,10 @@ const initForm: FormTextInput = {
 };
 
 export const TextInputScreen = () => {
+  const {
+    theme: {colors, divederColor},
+  } = useThemeContext();
+
   // const {form, onChange} = useForm<FormTextInput>(initForm);
   const {form, onChange} = useForm(initForm);
 
@@ -44,25 +49,37 @@ export const TextInputScreen = () => {
             <HeaderTitle title="TextInput" />
 
             <TextInput
-              style={stylesScreen.inputStyle}
+              style={{
+                ...stylesScreen.inputStyle,
+                borderColor: colors.text,
+                color: colors.text,
+              }}
               placeholder="Ingrese su nombre"
               autoCorrect={false}
               autoCapitalize="words"
+              placeholderTextColor={divederColor}
               onChangeText={value => onChange(value, 'name')}
             />
 
             <TextInput
-              style={stylesScreen.inputStyle}
+              style={{
+                ...stylesScreen.inputStyle,
+                borderColor: colors.text,
+                color: colors.text,
+              }}
               placeholder="Ingrese su email"
               autoCorrect={false}
               autoCapitalize="none"
               onChangeText={value => onChange(value, 'email')}
               keyboardType="email-address"
               keyboardAppearance="dark" // Android no agarro
+              placeholderTextColor={divederColor}
             />
 
             <View style={stylesScreen.switcheRow}>
-              <Text style={stylesScreen.switcheText}>Subscribir</Text>
+              <Text style={{...stylesScreen.switcheText, color: colors.text}}>
+                Subscribir
+              </Text>
               <CustomSwitch
                 isOn={form.isSubscribed}
                 onChange={value => onChange(value, 'isSubscribed')}
@@ -74,10 +91,15 @@ export const TextInputScreen = () => {
             <HeaderTitle title={JSON.stringify(form, null, 3)} />
 
             <TextInput
-              style={stylesScreen.inputStyle}
+              style={{
+                ...stylesScreen.inputStyle,
+                borderColor: colors.text,
+                color: colors.text,
+              }}
               placeholder="Ingrese su teléfono"
               onChangeText={value => onChange(value, 'phone')}
               keyboardType="phone-pad"
+              placeholderTextColor={divederColor}
             />
 
             <View style={{height: 100}} />

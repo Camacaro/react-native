@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   DefaultTheme,
@@ -21,6 +22,7 @@ import {ModalScreen} from '../screens/ModalScreen';
 import {InfiniteScrollScreen} from '../screens/InfiniteScrollScreen';
 import {SlideScreen} from '../screens/SlideScreen';
 import {ChangeThemeScreen} from '../screens/ChangeThemeScreen';
+import {View} from 'react-native';
 
 export type RootStackParams = {
   HomeScreen: undefined;
@@ -57,43 +59,55 @@ export const StackNavigator = () => {
   const {theme} = useThemeContext();
 
   return (
-    <NavigationContainer
-      theme={theme}
-      // theme={customTheme}
-    >
-      <Stack.Navigator
-        screenOptions={{
-          // contentStyle => cardStyle
-          contentStyle: {
-            // backgroundColor: 'white',
-          },
-          headerShown: false,
-        }}>
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="SwitchScreen" component={SwitchScreen} />
-        <Stack.Screen name="AlertScreen" component={AlertScreen} />
-        <Stack.Screen name="TextInputScreen" component={TextInputScreen} />
-        <Stack.Screen name="SectionListScreen" component={SectionListScreen} />
-        <Stack.Screen name="ModalScreen" component={ModalScreen} />
-        <Stack.Screen name="SlideScreen" component={SlideScreen} />
-        <Stack.Screen name="ChangeThemeScreen" component={ChangeThemeScreen} />
-        <Stack.Screen
-          name="Animation101Screen"
-          component={Animation101Screen}
-        />
-        <Stack.Screen
-          name="Animation102Screen"
-          component={Animation102Screen}
-        />
-        <Stack.Screen
-          name="InfiniteScrollScreen"
-          component={InfiniteScrollScreen}
-        />
-        <Stack.Screen
-          name="PullToRefreshScreen"
-          component={PullToRefreshScreen}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: theme.colors.background,
+      }}>
+      <NavigationContainer
+        theme={theme}
+        // theme={customTheme}
+      >
+        <Stack.Navigator
+          screenOptions={{
+            // contentStyle => cardStyle
+            contentStyle: {
+              // backgroundColor: 'white',
+            },
+            headerShown: false,
+          }}>
+          <Stack.Screen name="HomeScreen" component={HomeScreen} />
+          <Stack.Screen name="SwitchScreen" component={SwitchScreen} />
+          <Stack.Screen name="AlertScreen" component={AlertScreen} />
+          <Stack.Screen name="TextInputScreen" component={TextInputScreen} />
+          <Stack.Screen
+            name="SectionListScreen"
+            component={SectionListScreen}
+          />
+          <Stack.Screen name="ModalScreen" component={ModalScreen} />
+          <Stack.Screen name="SlideScreen" component={SlideScreen} />
+          <Stack.Screen
+            name="ChangeThemeScreen"
+            component={ChangeThemeScreen}
+          />
+          <Stack.Screen
+            name="Animation101Screen"
+            component={Animation101Screen}
+          />
+          <Stack.Screen
+            name="Animation102Screen"
+            component={Animation102Screen}
+          />
+          <Stack.Screen
+            name="InfiniteScrollScreen"
+            component={InfiniteScrollScreen}
+          />
+          <Stack.Screen
+            name="PullToRefreshScreen"
+            component={PullToRefreshScreen}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </View>
   );
 };

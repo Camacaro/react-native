@@ -3,11 +3,15 @@ import React, {useState} from 'react';
 import {ScrollView, View, RefreshControl} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {HeaderTitle} from '../components/HeaderTitle';
+import {useThemeContext} from '../context/theme/ThemeContext';
 import {styles} from '../theme/appTheme';
 
 // FlatLst -> Carga los componentes de manera perezosa
 // ScrollView -> los carga todos de manera completa
 export const PullToRefreshScreen = () => {
+  const {
+    theme: {colors, dark},
+  } = useThemeContext();
   const {top} = useSafeAreaInsets();
   const [refreshing, setRefreshing] = useState(false);
   const [data, setData] = useState<string>();
@@ -37,13 +41,13 @@ export const PullToRefreshScreen = () => {
           // progressViewOffset distancia del loading solo funciona en android
           progressViewOffset={10}
           //  funciona en android
-          progressBackgroundColor="#5856D6"
+          progressBackgroundColor={colors.primary}
           colors={['white', 'red', 'orange']}
           // Solo IOS
           style={{
             backgroundColor: 'red',
           }}
-          tintColor="blue"
+          tintColor={dark ? 'white' : 'black'}
         />
       }>
       <View style={styles.globalMargin}>
