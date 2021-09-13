@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  DefaultTheme,
+  DarkTheme,
+  NavigationContainer,
+  Theme,
+} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {HomeScreen} from '../screens/HomeScreen';
 import {Animation101Screen} from '../screens/Animation101Screen';
@@ -30,34 +36,58 @@ export type RootStackParams = {
 
 const Stack = createNativeStackNavigator<RootStackParams>();
 
+const customTheme: Theme = {
+  dark: true,
+  colors: {
+    ...DefaultTheme.colors,
+    ...DarkTheme.colors,
+    // primary: '',
+    // background: 'grey',
+    // card: '',
+    // text: '',
+    // border: '',
+    // notification: '',
+  },
+};
+
 export const StackNavigator = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        // contentStyle => cardStyle
-        contentStyle: {
-          // backgroundColor: 'white',
-        },
-        headerShown: false,
-      }}>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="Animation101Screen" component={Animation101Screen} />
-      <Stack.Screen name="Animation102Screen" component={Animation102Screen} />
-      <Stack.Screen name="SwitchScreen" component={SwitchScreen} />
-      <Stack.Screen name="AlertScreen" component={AlertScreen} />
-      <Stack.Screen name="TextInputScreen" component={TextInputScreen} />
-      <Stack.Screen name="SectionListScreen" component={SectionListScreen} />
-      <Stack.Screen name="ModalScreen" component={ModalScreen} />
-      <Stack.Screen name="SlideScreen" component={SlideScreen} />
-      <Stack.Screen name="ChangeThemeScreen" component={ChangeThemeScreen} />
-      <Stack.Screen
-        name="InfiniteScrollScreen"
-        component={InfiniteScrollScreen}
-      />
-      <Stack.Screen
-        name="PullToRefreshScreen"
-        component={PullToRefreshScreen}
-      />
-    </Stack.Navigator>
+    <NavigationContainer
+    // theme={customTheme}
+    >
+      <Stack.Navigator
+        screenOptions={{
+          // contentStyle => cardStyle
+          contentStyle: {
+            // backgroundColor: 'white',
+          },
+          headerShown: false,
+        }}>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="SwitchScreen" component={SwitchScreen} />
+        <Stack.Screen name="AlertScreen" component={AlertScreen} />
+        <Stack.Screen name="TextInputScreen" component={TextInputScreen} />
+        <Stack.Screen name="SectionListScreen" component={SectionListScreen} />
+        <Stack.Screen name="ModalScreen" component={ModalScreen} />
+        <Stack.Screen name="SlideScreen" component={SlideScreen} />
+        <Stack.Screen name="ChangeThemeScreen" component={ChangeThemeScreen} />
+        <Stack.Screen
+          name="Animation101Screen"
+          component={Animation101Screen}
+        />
+        <Stack.Screen
+          name="Animation102Screen"
+          component={Animation102Screen}
+        />
+        <Stack.Screen
+          name="InfiniteScrollScreen"
+          component={InfiniteScrollScreen}
+        />
+        <Stack.Screen
+          name="PullToRefreshScreen"
+          component={PullToRefreshScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
