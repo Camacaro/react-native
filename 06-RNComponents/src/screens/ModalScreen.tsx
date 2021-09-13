@@ -39,7 +39,7 @@ export const ModalScreen = () => {
               },
               shadowOpacity: 0.25,
               elevation: 10,
-              borderRadius: 5,
+              borderRadius: 10,
             }}>
             <Text style={{fontSize: 20, fontWeight: 'bold'}}>Titulo modal</Text>
             <Text style={{fontSize: 16, fontWeight: '300', marginBottom: 20}}>
