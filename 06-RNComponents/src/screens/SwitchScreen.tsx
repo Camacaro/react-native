@@ -2,8 +2,12 @@ import React, {useState} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import {CustomSwitch} from '../components/CustomSwitch';
 import {HeaderTitle} from '../components/HeaderTitle';
+import {useThemeContext} from '../context/theme/ThemeContext';
 
 export const SwitchScreen = () => {
+  const {
+    theme: {colors},
+  } = useThemeContext();
   const [state, setState] = useState({
     isActive: true,
     isHungry: false,
@@ -24,7 +28,9 @@ export const SwitchScreen = () => {
       <HeaderTitle title="Switches" />
 
       <View style={styles.switcheRow}>
-        <Text style={styles.switcheText}>IsActive</Text>
+        <Text style={{...styles.switcheText, color: colors.text}}>
+          IsActive
+        </Text>
         <CustomSwitch
           isOn={isActive}
           onChange={value => onChange(value, 'isActive')}
@@ -32,7 +38,9 @@ export const SwitchScreen = () => {
       </View>
 
       <View style={styles.switcheRow}>
-        <Text style={styles.switcheText}>isHungry</Text>
+        <Text style={{...styles.switcheText, color: colors.text}}>
+          isHungry
+        </Text>
         <CustomSwitch
           isOn={isHungry}
           onChange={value => onChange(value, 'isHungry')}
@@ -40,14 +48,16 @@ export const SwitchScreen = () => {
       </View>
 
       <View style={styles.switcheRow}>
-        <Text style={styles.switcheText}>isHappy</Text>
+        <Text style={{...styles.switcheText, color: colors.text}}>isHappy</Text>
         <CustomSwitch
           isOn={isHappy}
           onChange={value => onChange(value, 'isHappy')}
         />
       </View>
 
-      <Text style={styles.switcheText}>{JSON.stringify(state, null, 5)}</Text>
+      <Text style={{...styles.switcheText, color: colors.text}}>
+        {JSON.stringify(state, null, 5)}
+      </Text>
     </View>
   );
 };

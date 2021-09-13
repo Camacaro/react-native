@@ -6,6 +6,9 @@ import {
   Theme,
 } from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+import {useThemeContext} from '../context/theme/ThemeContext';
+
 import {HomeScreen} from '../screens/HomeScreen';
 import {Animation101Screen} from '../screens/Animation101Screen';
 import {Animation102Screen} from '../screens/Animation102Screen';
@@ -51,9 +54,12 @@ const customTheme: Theme = {
 };
 
 export const StackNavigator = () => {
+  const {theme} = useThemeContext();
+
   return (
     <NavigationContainer
-    // theme={customTheme}
+      theme={theme}
+      // theme={customTheme}
     >
       <Stack.Navigator
         screenOptions={{

@@ -1,14 +1,18 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {MenuItem} from '../interfaces/appInterfaces';
 import {useNavigation} from '@react-navigation/core';
+import {useThemeContext} from '../context/theme/ThemeContext';
+import {MenuItem} from '../interfaces/appInterfaces';
 // import {useTheme} from '@react-navigation/native';
 interface Props {
   menuItem: MenuItem;
 }
 
 export const FlatListManuItem = ({menuItem}: Props) => {
+  const {
+    theme: {colors},
+  } = useThemeContext();
   const navigation = useNavigation();
   // Puedo usar los colores del thema que tenga el navigator
   // const {colors} = useTheme();
@@ -18,11 +22,11 @@ export const FlatListManuItem = ({menuItem}: Props) => {
       // activeOpacity={0.8}
       onPress={() => navigation.navigate(menuItem.component as any)}>
       <View style={styles.container}>
-        <Icon name={menuItem.icon} color="#5856D6" size={23} />
+        <Icon name={menuItem.icon} color={colors.primary} size={23} />
         <Text
           style={{
             ...styles.itemText,
-            // color: colors.text,
+            color: colors.text,
           }}>
           {' '}
           {menuItem.name}
@@ -32,7 +36,7 @@ export const FlatListManuItem = ({menuItem}: Props) => {
         como lo el icono al final, si le coloco un backgroundColor: 'red'
         vere el espacio qeu toma  */}
         <View style={styles.viewSpace} />
-        <Icon name="chevron-forward-outline" color="#5856D6" size={23} />
+        <Icon name="chevron-forward-outline" color={colors.primary} size={23} />
       </View>
     </TouchableOpacity>
   );
