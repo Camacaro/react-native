@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   View,
   Text,
@@ -7,25 +7,52 @@ import {
   Dimensions,
   Image,
 } from 'react-native';
+import {getImagesColors} from '../helpers/getImagesColors';
 import {SimplePokemon} from '../interfaces/pokemonInterface';
 import {FadeInImage} from './FadeInImage';
+import {useNavigation} from '@react-navigation/core';
 
 const windowsWidth = Dimensions.get('window').width;
 
 interface Props {
   pokemon: SimplePokemon;
 }
-{
-  /* <FadeInImage uri={item.picture} style={{width: 100, height: 100}} /> */
-}
+
 export const PokemonCard = ({pokemon}: Props) => {
-  // activeOpacity={0.9}
+  const [bgColor, setBgColor] = useState('grey');
+  const isMounted = useRef(true);
+  const navigation = useNavigation();
+
+  const assignBg = async () => {
+    const [bg] = await getImagesColors(pokemon.picture);
+
+    if (isMounted.current) {
+      setBgColor(bg || 'grey');
+    }
+  };
+
+  useEffect(() => {
+    assignBg();
+
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
+
   return (
-    <TouchableOpacity activeOpacity={0.8} onPress={() => console.log('clic')}>
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={() =>
+        navigation.navigate('PokemonScreen', {
+          simplePokemon: pokemon,
+          color: bgColor,
+        })
+      }>
       <View
         style={{
           ...styles.cardContainer,
           width: windowsWidth * 0.4,
+          backgroundColor: bgColor,
         }}>
         <View>
           <Text style={styles.name}>
@@ -40,7 +67,6 @@ export const PokemonCard = ({pokemon}: Props) => {
           />
         </View>
 
-
         <FadeInImage uri={pokemon.picture} style={styles.pokemonImage} />
       </View>
     </TouchableOpacity>
@@ -50,7 +76,7 @@ export const PokemonCard = ({pokemon}: Props) => {
 const styles = StyleSheet.create({
   cardContainer: {
     marginHorizontal: 10,
-    backgroundColor: 'red',
+    backgroundColor: 'grey',
     height: 120,
     width: 160,
     marginBottom: 25,

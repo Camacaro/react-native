@@ -8,9 +8,7 @@ import {PokemonCard} from '../components/PokemonCard';
 
 export const HomeScreen = () => {
   const {top} = useSafeAreaInsets();
-  const {simplePokemonList, isLoading, loadPokemons} = usePokemonPaginated();
-
-  console.log(simplePokemonList);
+  const {simplePokemonList, loadPokemons} = usePokemonPaginated();
 
   return (
     <>
