@@ -1,9 +1,11 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {SearchScreen} from '../screens/SearchScreen';
 import {StackNavigator} from './StackNavigator';
 import {Platform} from 'react-native';
+import {TabStackNavigator} from './TabStackNavigator';
+// import { SearchScreen } from '../screens/SearchScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -42,7 +44,12 @@ export const Tabs = () => {
       />
       <Tab.Screen
         name="SearchScreen"
-        component={SearchScreen}
+        // Aqui hago este cambio es para que cuando este dentro del SearchScreen
+        // y vaya a los detalles del pokemon (PokemonScreen), me mantenga este
+        // tab activo y al devolverme me devuelva hacia SearchScreen y no al
+        // Listado (HomeScreen)
+        // component={SearchScreen}
+        component={TabStackNavigator}
         options={{
           tabBarLabel: 'Busqueda',
           tabBarIcon: ({color}) => (
