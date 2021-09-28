@@ -137,4 +137,8 @@ El objetivo final es ir creando una aplicación que expandiremos en la siguiente
 ### 08-RutasApp
 permisos relacionados al GPS, cámara, photos o lo que necesiten, todo se hace la misma manera, y aquí crearemos un contexto que nos permita trabajar fácilmente cualquier permiso que necesiten en sus aplicaciones futuras.
 
-Pero nos enfocaremos aquí, en todo el manejo del permiso de GPS para poder determinar su ubicación precisa y así poder generar un mapa en sus coordenadas en la próxima sección
+Pero nos enfocaremos aquí, en todo el manejo del permiso de GPS para poder determinar su ubicación precisa y así poder generar un mapa en sus coordenadas en la próxima sección.
+
+GPS del dispositivo, darle seguimiento, trazar rutas, colocar marcadores y sobre todo, estar pendiente de los permisos del GPS.
+
+Utilizar Apple Maps y Google Maps, junto sus configuraciones respectivas e instalaciones.
