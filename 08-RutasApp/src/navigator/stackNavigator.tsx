@@ -1,13 +1,33 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {HomeScreen} from '../screens/HomeScreen';
+import {MapScreen} from '../screens/MapScreen';
+import {PermissionsScreen} from '../screens/PermissionsScreen';
+import {usePermissionContext} from '../context/PermissionsContext';
+import {LoadingScreen} from '../screens/LoadingScreen';
 
 const Stack = createStackNavigator();
 
 export const StackNavigator = () => {
+  const {permissions} = usePermissionContext();
+
+  if (permissions.locationStatus === 'unavailable') {
+    return <LoadingScreen />;
+  }
+
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+    <Stack.Navigator
+      initialRouteName="PermissionsScreen"
+      screenOptions={{
+        headerShown: false,
+        cardStyle: {
+          backgroundColor: 'white',
+        },
+      }}>
+      {permissions.locationStatus === 'granted' ? (
+        <Stack.Screen name="MapScreen" component={MapScreen} />
+      ) : (
+        <Stack.Screen name="PermissionsScreen" component={PermissionsScreen} />
+      )}
     </Stack.Navigator>
   );
 };
