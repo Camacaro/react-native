@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import {AppState, Platform} from 'react-native';
 import {
@@ -30,6 +31,8 @@ export const PermissionsProvider = ({children}: any) => {
   const [permissions, setPermissions] = useState(permissionsInitState);
 
   useEffect(() => {
+    checkLocationPermission();
+
     const AppListener = AppState.addEventListener('change', state => {
       console.log({state});
       if (state !== 'active') {
